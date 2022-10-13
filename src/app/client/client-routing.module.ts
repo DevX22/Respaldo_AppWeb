@@ -4,7 +4,12 @@ import { RouterModule, Routes } from '@angular/router';
 const routes: Routes = [
   {
     path:'',
-    loadChildren:()=>import("./page-client/page-client.module").then(x=>x.PageClientModule)
+    loadChildren: () => import("./page-client/page-client.module").then(x => x.PageClientModule)
+    
+  },
+  {
+    path: 'tienda',
+    loadChildren:()=> import("./store/store.module").then(x=>x.StoreModule)
   }
 ];
 

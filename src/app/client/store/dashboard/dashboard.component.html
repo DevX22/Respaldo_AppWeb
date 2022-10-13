@@ -1,0 +1,225 @@
+<body>
+  <!--Inicio Header-->
+  <header>
+    <!--Inicio Menu-Header-->
+    <div class="nav__header">
+      <!--Logo-->
+      <div>
+        <img src="./../../../assets/img/LogoPrimary.png" alt="" class="logo" />
+      </div>
+      <!--Logo-->
+
+      <!--icon-bar-->
+      <input type="checkbox" id="check" />
+      <label for="check" class="bar-btn">
+        <i class="fas fa-bars"></i>
+      </label>
+      <!--icon-bar-->
+
+      <!--Menu-->
+      <ul class="nav-menu">
+        <li><a href="login/register">Crea tu cuenta</a></li>
+        <li><a href="login">Ingresa</a></li>
+        <li><a href="">Mis compras</a></li>
+      </ul>
+
+      <div class="user" *ngIf="user">
+        <img
+          class="header_avatar"
+          src="../../../../assets/img/image-avatar.png"
+          alt=""
+        />
+        {{ user.nombreApellido }}
+        <br />
+        <button class="btn_salir" (click)="logout()">Salir</button>
+      </div>
+
+      <div *ngIf="!user"></div>
+
+      <!--Menu-->
+    </div>
+    <!--Final Menu-Header-->
+  </header>
+  <!--Final Header-->
+  <!-- Inicio img-Carrusel-->
+  <nav class="nav__slider">
+    <div class="container-slider">
+      <div class="slider" id="slider">
+        <div class="slider_section">
+          <img
+            src="../../../../assets/img/CarteraOferta1.jpg"
+            alt=""
+            class="slider_img"
+          />
+        </div>
+        <div class="slider_section">
+          <img
+            src="../../../../assets/img/CarteraOferta2.jpg"
+            alt=""
+            class="slider_img"
+          />
+        </div>
+        <div class="slider_section">
+          <img
+            src="../../../../assets/img/CarteraOferta3.jpg"
+            alt=""
+            class="slider_img"
+          />
+        </div>
+        <div class="slider_section">
+          <img
+            src="../../../../assets/img/logotienda.png"
+            alt=""
+            class="slider_img"
+          />
+        </div>
+      </div>
+      <div class="slider_btn slider_btn--righ" id="btn-rigth">&#62;</div>
+      <div class="slider_btn slider_btn--left" id="btn-left">&#60;</div>
+    </div>
+  </nav>
+  <!-- Fin img-Carrusel-->
+
+  <!-- Inicio filtro Producto-->
+  <div class="container_producto">
+    <div class="sidebar_filters active">
+      <div class="filter_container">
+        <ul class="filter_list">
+          <li class="item_filter">
+            <div class="title-item">
+              <p>Categoria</p>
+              <i class="icons">➕ </i>
+            </div>
+            <div class="contenido_filtro">
+              <ul class="list_unstyled">
+                <li>
+                  <label class="content_Check">
+                    Billeteras
+                    <input
+                      class="check_element"
+                      type="checkbox"
+                      data-filter="categoria"
+                      data-value="Billeteras"
+                      data-type="checkbox"
+                    />
+                    <span class="check_Mark"></span>
+                  </label>
+                </li>
+                <li>
+                  <label class="content_Check">
+                    Carteras
+                    <input
+                      class="check_element"
+                      type="checkbox"
+                      data-filter="categoria"
+                      data-value="Billeteras"
+                      data-type="checkbox"
+                    />
+                    <span class="check_Mark"></span>
+                  </label>
+                </li>
+                <li>
+                  <label class="content_Check">
+                    Mochilas
+                    <input
+                      class="check_element"
+                      type="checkbox"
+                      data-filter="categoria"
+                      data-value="Billeteras"
+                      data-type="checkbox"
+                    />
+                    <span class="check_Mark"></span>
+                  </label>
+                </li>
+              </ul>
+            </div>
+          </li>
+        </ul>
+      </div>
+    </div>
+
+    <!-- Inicio filtro Producto-->
+    <div class="productos_catalogo">
+      <div class="productos">
+        <div class="producto_item">
+          <a class="link" href=""
+            ><img class="imagen_producto"
+              src="https://renzocosta.vteximg.com.br/arquivos/ids/170415/MORRAL_MRC-2163_DARK-BROWN_0.jpg?v=637731885174270000"
+              alt=""
+          /></a>
+          <div class="tarjeta_body">
+            <ul class="lista_color_container">
+              <li>
+                <span class="color_elemento active"></span>
+                <span class="color_nombre">marron</span>
+              </li>
+            </ul>
+            <a class="link" href="">
+              <h5 class="nombre_producto">MORRAL MRC 2163</h5>
+            </a>
+            <div class="precio_descuento">
+              <div class="precio_producto">
+                <p class="actual">S/ 450.00</p>
+              </div>
+            </div>
+            <button class="agregar_carrito">
+              añadir a bolsa
+            </button>
+          </div>
+        </div>
+        <div class="producto_item">
+          <a class="link" href=""
+            ><img class="imagen_producto"
+              src="https://renzocosta.vteximg.com.br/arquivos/ids/170415/MORRAL_MRC-2163_DARK-BROWN_0.jpg?v=637731885174270000"
+              alt=""
+          /></a>
+          <div class="tarjeta_body">
+            <ul class="lista_color_container">
+              <li>
+                <span class="color_elemento active"></span>
+                <span class="color_nombre">marron</span>
+              </li>
+            </ul>
+            <a class="link" href="">
+              <h5 class="nombre_producto">MORRAL MRC 2163</h5>
+            </a>
+            <div class="precio_descuento">
+              <div class="precio_producto">
+                <p class="actual">S/ 450.00</p>
+              </div>
+            </div>
+            <button class="agregar_carrito">
+              añadir a bolsa
+            </button>
+          </div>
+        </div>
+        <div class="producto_item">
+          <a class="link" href=""
+            ><img class="imagen_producto"
+              src="https://renzocosta.vteximg.com.br/arquivos/ids/170415/MORRAL_MRC-2163_DARK-BROWN_0.jpg?v=637731885174270000"
+              alt=""
+          /></a>
+          <div class="tarjeta_body">
+            <ul class="lista_color_container">
+              <li>
+                <span class="color_elemento active"></span>
+                <span class="color_nombre">marron</span>
+              </li>
+            </ul>
+            <a class="link" href="">
+              <h5 class="nombre_producto">MORRAL MRC 2163</h5>
+            </a>
+            <div class="precio_descuento">
+              <div class="precio_producto">
+                <p class="actual">S/ 450.00</p>
+              </div>
+            </div>
+            <button class="agregar_carrito">
+              añadir a bolsa
+            </button>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+</body>
