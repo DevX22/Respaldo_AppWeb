@@ -1,6 +1,7 @@
 import { emitDistinctChangesOnlyDefaultValue, makeBindingParser } from '@angular/compiler';
 import { Component, OnInit } from '@angular/core';
 import { LoadJsService } from 'src/app/service/load-js.service';
+import * as AOS from 'aos'; 
 
 @Component({
   selector: 'app-page-main',
@@ -32,7 +33,10 @@ export class PageMainComponent implements OnInit {
   ngOnInit(): void {
     this.activenav();
     this._loadJsService.changeJS(['menu-reactivo'],'header');
+    this._loadJsService.changeJS(['sliderPage'],'body');
+    AOS.init();
   }
+  
   activenav(){
     const nav=document.querySelector(".nav-header");
     const winMax=Number(document.querySelector(".home")?.clientHeight)
@@ -41,3 +45,5 @@ export class PageMainComponent implements OnInit {
     });
   }
 }
+
+
