@@ -81,17 +81,17 @@
   <!-- Fin img-Carrusel-->
 
   <!-- Inicio filtro Producto-->
-  <div class="container_producto">
-    <div class="sidebar_filters active">
-      <div class="filter_container">
-        <ul class="filter_list">
-          <li class="item_filter">
-            <div class="title-item">
+  <div class="producto_container">
+    <div class="filtro_categoria active">
+      <div class="filtro_container">
+        <ul class="filtro_list">
+          <li class="filtro_item">
+            <div class="titulo-item">
               <p>Categoria</p>
               <i class="icons">➕ </i>
             </div>
             <div class="contenido_filtro">
-              <ul class="list_unstyled">
+              <ul class="lista">
                 <li>
                   <label class="content_Check">
                     Billeteras
@@ -147,7 +147,7 @@
               src="https://renzocosta.vteximg.com.br/arquivos/ids/170415/MORRAL_MRC-2163_DARK-BROWN_0.jpg?v=637731885174270000"
               alt=""
           /></a>
-          <div class="tarjeta_body">
+          <div class="tarjeta_body" *ngFor="let producto of productos">
             <ul class="lista_color_container">
               <li>
                 <span class="color_elemento active"></span>
@@ -155,11 +155,11 @@
               </li>
             </ul>
             <a class="link" href="">
-              <h5 class="nombre_producto">MORRAL MRC 2163</h5>
+              <h5 class="nombre_producto">{{producto.producto}}</h5>
             </a>
             <div class="precio_descuento">
               <div class="precio_producto">
-                <p class="actual">S/ 450.00</p>
+                <p class="actual">S/ {{producto.precioVenta}}</p>
               </div>
             </div>
             <button class="agregar_carrito">
@@ -167,58 +167,7 @@
             </button>
           </div>
         </div>
-        <div class="producto_item">
-          <a class="link" href=""
-            ><img class="imagen_producto"
-              src="https://renzocosta.vteximg.com.br/arquivos/ids/170415/MORRAL_MRC-2163_DARK-BROWN_0.jpg?v=637731885174270000"
-              alt=""
-          /></a>
-          <div class="tarjeta_body">
-            <ul class="lista_color_container">
-              <li>
-                <span class="color_elemento active"></span>
-                <span class="color_nombre">marron</span>
-              </li>
-            </ul>
-            <a class="link" href="">
-              <h5 class="nombre_producto">MORRAL MRC 2163</h5>
-            </a>
-            <div class="precio_descuento">
-              <div class="precio_producto">
-                <p class="actual">S/ 450.00</p>
-              </div>
-            </div>
-            <button class="agregar_carrito">
-              añadir a bolsa
-            </button>
-          </div>
-        </div>
-        <div class="producto_item">
-          <a class="link" href=""
-            ><img class="imagen_producto"
-              src="https://renzocosta.vteximg.com.br/arquivos/ids/170415/MORRAL_MRC-2163_DARK-BROWN_0.jpg?v=637731885174270000"
-              alt=""
-          /></a>
-          <div class="tarjeta_body">
-            <ul class="lista_color_container">
-              <li>
-                <span class="color_elemento active"></span>
-                <span class="color_nombre">marron</span>
-              </li>
-            </ul>
-            <a class="link" href="">
-              <h5 class="nombre_producto">MORRAL MRC 2163</h5>
-            </a>
-            <div class="precio_descuento">
-              <div class="precio_producto">
-                <p class="actual">S/ 450.00</p>
-              </div>
-            </div>
-            <button class="agregar_carrito">
-              añadir a bolsa
-            </button>
-          </div>
-        </div>
+
       </div>
     </div>
   </div>

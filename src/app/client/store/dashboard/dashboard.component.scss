@@ -1,8 +1,8 @@
 //importaciones
 @import url("https://fonts.googleapis.com/css2?family=Montserrat:wght@400;600;900&display=swap"); //letras
 @import "../../../const/fontValue";
-@import "../../../const/mixins";
-@import "../../../const/variables";
+@import "../../../const/responsive";
+@import "../../../const/colores";
 
 * {
   padding: 0;
@@ -188,7 +188,7 @@ nav {
 //Fin nav
 
 //container productos-filter
-.container_producto {
+.producto_container {
   padding: 0 5rem;
   display: flex;
   align-items: stretch;
@@ -196,22 +196,22 @@ nav {
   width: 100%;
 
   //filter
-  .sidebar_filters {
+  .filtro_categoria {
     padding: 1.6rem;
     width: 20rem;
-    .filter_container {
+    .filtro_container {
       border-bottom: 1px solid #e9e8ea;
       border-top: 1px solid #e9e8ea;
       height: auto;
       width: 100%;
-      .filter_list {
+      .filtro_list {
         display: flex;
         flex-direction: column;
         margin: 0;
         width: 100%;
-        .item_filter {
+        .filtro_item {
           border-bottom: 1px solid #e9e8ea;
-          .title-item {
+          .titulo-item {
             align-items: center;
             cursor: pointer;
             display: flex;
@@ -229,7 +229,7 @@ nav {
             height: auto;
             opacity: 1;
             padding: 0.9375rem 0.5rem;
-            .list_unstyled {
+            .lista {
               list-style: none;
               padding-left: 0;
               .content_Check {
@@ -335,6 +335,7 @@ nav {
             color: #202020;
             font-size: 0.6875rem;
             line-height: 1;
+            text-transform: uppercase;
           }
           .precio_descuento {
             display: flex;
