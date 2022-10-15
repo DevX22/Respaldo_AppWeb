@@ -109,7 +109,7 @@
     height: 100%;
     //margin: auto;
     overflow: hidden;
-    box-shadow: 0 0 0 10px #fff, 0 15px 50px;
+    box-shadow: 0 0 0 10px #fff, 0 15px 10px;
     //botones
     //position: relative;
     text-align: center;
@@ -166,67 +166,81 @@
   height: 80vh;
   background-color: white;
   padding: 5em;
-}
-
-//about us
+  align-items: center;
+  //about us
 .contenedorabout {
   width: 100%;
   display: flex;
+  padding: 5em;
   //align-items: flex-end;
+  .contenedorabout .imagenVision {
+    align-items: center;
+    padding: 2em;
+    width: 250%;
+    img.imgabout {
+      width: 100%;
+      height: auto;
+      display: flex;
+    }
+    
+  }
+  .contenedorabout .vision {
+    //float: right;
+    padding: 3em;
+   
+  }
 }
-.contenedorabout .imagenVision {
-  align-items: center;
-  padding: 2em;
-  width: 250%;
 }
-img.imgabout {
-  width: 100%;
-  height: auto;
-  display: flex;
-}
-.contenedorabout .vision {
-  //float: right;
-  padding: 3em;
-}
-.titulo {
-  text-align: center;
-  letter-spacing: 0.5em;
-  font-family: cursive;
-}
-.texto {
-  text-align: center;
-  font-size: 13px;
-  font-family: Arial;
-  text-transform: capitalize;
-}
+
 
 //contact
 .contacto {
   width: 100%;
   height: auto;
   padding: 3em;
+  
 }
 .contacto .contenedor {
   width: 100%;
   height: auto;
   padding: 3em;
+  
+  
 }
-.contacto .redsocial {
-  width: 300px;
-  //display: flex;
-  //align-items: flex-end;
-
-  height: 50px;
-  //background-color:green($color: #000000);
-  float: left;
+.titulo {
+  text-align: center;
+  letter-spacing: 0.5em;
+  font-family: cursive;
+  font-size: 30px;
 }
-.redimg {
-  width: 150px;
-  height: 150px;
-  padding: 0.5em;
-  cursor: pointer;
+.texto {
+  text-align: center;
+  font-size: 19px;
+  font-family: Arial;
+  text-transform: capitalize;
 }
 .panda {
   width: 300px;
   height: 300px;
 }
+.redimg {
+  width: 300px;
+  height: 300px;
+  padding: 0.5em;
+  cursor: pointer;
+}     
+.contacto .redsocial {
+      width: 500px;
+      //display: flex;
+      //align-items: flex-end;
+    
+      height: 80px;
+      //background-color:green($color: #000000);
+      float: left;
+      
+    }
+    //footer
+.logofinal{
+  width: 250px;
+  height: 150px;
+  }
