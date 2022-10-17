@@ -1,7 +1,7 @@
 import { emitDistinctChangesOnlyDefaultValue, makeBindingParser } from '@angular/compiler';
 import { Component, OnInit } from '@angular/core';
 import { LoadJsService } from 'src/app/service/load-js.service';
-import * as AOS from 'aos'; 
+import { init}  from 'aos';
 
 @Component({
   selector: 'app-page-main',
@@ -9,22 +9,6 @@ import * as AOS from 'aos';
   styleUrls: ['./page-main.component.scss']
 })
 export class PageMainComponent implements OnInit {
-  menus=[{
-    'titulo':'INICIO',
-    'url':'#'
-  },
-  {
-    'titulo':'SOBRE NOSOTROS',
-    'url':'#'
-  },
-  {
-    'titulo':'CONTACTOS',
-    'url':'#'
-  },
-  {
-    'titulo':'HISTORIAS',
-    'url':'#'
-  }];
 
   constructor(private _loadJsService:LoadJsService) { 
     
@@ -34,7 +18,7 @@ export class PageMainComponent implements OnInit {
     this.activenav();
     this._loadJsService.changeJS(['menu-reactivo'],'header');
     this._loadJsService.changeJS(['sliderPage'],'body');
-    AOS.init();
+    init();
   }
   
   activenav(){

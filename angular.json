@@ -23,22 +23,26 @@
             "polyfills": "src/polyfills.ts",
             "tsConfig": "tsconfig.app.json",
             "inlineStyleLanguage": "scss",
+            "allowedCommonJsDependencies": [
+              "aos"
+            ],
             "assets": [
+              "src/app/auth/admin-auth/assets",
               "src/favicon.ico",
               "src/assets"
             ],
             "styles": [
               "./node_modules/@fortawesome/fontawesome-free/css/all.min.css",
               "./node_modules/bootstrap/dist/css/bootstrap.min.css",
-              "src/styles.scss",
-              "./node_modules/Aos/dist/Aos.css"
+              "./node_modules/aos/dist/aos.css",
+              "src/styles.scss"
               
             ],
             "scripts": [
               "./node_modules/jquery/dist/jquery.min.js",
               "./node_modules/crypto-js/crypto-js.js",
               "./node_modules/bootstrap/dist/js/bootstrap.bundle.min.js",
-              "./node_modules/Aos/dist/Aos.js"
+              "./node_modules/aos/dist/aos.js"
             ]
           },
           "configurations": {
