@@ -1,5 +1,3 @@
-'use strict'
-console.log("cargo:v")
  //carrusel home
  const primero = document.querySelector(' .primero')
  const punto = document.querySelectorAll(' .punto')
