@@ -1,6 +1,6 @@
 import { Component, OnInit } from '@angular/core';
-import { Producto } from 'src/app/dto/producto.dto';
-import { User } from 'src/app/dto/user.dto';
+import { Producto } from 'src/app/dto/producto/producto.dto';
+import { User } from 'src/app/dto/user/user.dto';
 import { LoadJsService } from 'src/app/service/load-js.service';
 import { ProductoService } from 'src/app/service/producto.service';
 import { UserService } from 'src/app/service/user.service';
