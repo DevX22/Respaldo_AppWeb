@@ -25,7 +25,7 @@ export class PageMainComponent implements OnInit {
     const nav=document.querySelector(".nav-header");
     const winMax=Number(document.querySelector(".home")?.clientHeight)
     window.addEventListener("scroll",function(){
-      nav?.classList.toggle("active",window.scrollY>winMax);
+      nav?.classList.toggle("active",window.scrollY>winMax-50);
     });
   }
 }
