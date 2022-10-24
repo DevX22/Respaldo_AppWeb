@@ -18,6 +18,6 @@ export interface Producto {
   precioVenta: number;
   stock: number;
   estado: boolean;
-  color: Color[];
-  img: Imagen[];
+  colorProducto: Color[];
+  imgProducto: Imagen[];
 }

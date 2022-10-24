@@ -1,4 +1,4 @@
-<body>
+<div class="div_body" style="background-color: rgb(246, 233, 233)">
   <!--Inicio Header-->
   <header>
     <!--Inicio Menu-Header-->
@@ -95,7 +95,7 @@
                 <li>
                   <label class="content_Check">
                     Billeteras
-                    <input/>
+                    <input />
                     <span class="check_Mark"></span>
                   </label>
                 </li>
@@ -107,36 +107,44 @@
     </div>
 
     <!-- Inicio filtro Producto-->
-    <div class="productos_catalogo">
+    <div class="productos_catalogo mt-4">
       <div class="productos">
-        <div class="producto_item">
-          <a class="link" href=""
-            ><img class="imagen_producto"
-              src="https://renzocosta.vteximg.com.br/arquivos/ids/170415/MORRAL_MRC-2163_DARK-BROWN_0.jpg?v=637731885174270000"
-              alt=""
-          /></a>
-          <div class="tarjeta_body" *ngFor="let producto of productos">
+        <div class="producto_item" *ngFor="let p of productos">
+          <carousel [interval]="1000">
+            <slide *ngFor="let img of p.imgProducto">
+              <img
+                height="200px"
+                width="200px"
+                class="imagen_producto"
+                [src]="[img.imgUrl]"
+                alt="{{ img.nombreImg }}"
+                style="display: block; width: 100%"
+              />
+            </slide>
+          </carousel>
+          <div class="tarjeta_body">
             <ul class="lista_color_container">
-              <li>
-                <span class="color_elemento active"></span>
-                <span class="color_nombre">marron</span>
+              <li *ngFor="let cl of p.colorProducto">
+                <span
+                  class="color_elemento active"
+                  style="background-color: #800000"
+                  >{{ cl.colorCode }}</span
+                >
+                <span class="color_nombre">{{ cl.colorName }}</span>
               </li>
             </ul>
             <a class="link" href="">
-              <h5 class="nombre_producto">{{producto.producto}}</h5>
+              <h5 class="nombre_producto">{{ p.producto }}</h5>
             </a>
             <div class="precio_descuento">
               <div class="precio_producto">
-                <p class="actual">S/ {{producto.precioVenta}}</p>
+                <p class="actual">S/ {{ p.precioVenta }}</p>
               </div>
             </div>
-            <button class="agregar_carrito">
-              añadir a bolsa
-            </button>
+            <button class="agregar_carrito">añadir a bolsa</button>
           </div>
         </div>
-
       </div>
     </div>
   </div>
-</body>
+</div>
