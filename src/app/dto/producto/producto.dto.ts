@@ -1,3 +1,6 @@
+import { Color } from '../producto/color.dto';
+import { Imagen } from '../producto/imagen.dto';
+
 export interface Producto {
   id: number;
   producto: string;
@@ -15,4 +18,6 @@ export interface Producto {
   precioVenta: number;
   stock: number;
   estado: boolean;
+  color: Color[];
+  img: Imagen[];
 }
