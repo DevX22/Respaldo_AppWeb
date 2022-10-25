@@ -14,19 +14,21 @@
 
 .div_body {
   font-family: "Montserrat", sans-serif;
+  width: 100%;
+  height: 100%;
 }
 
 header {
   width: 100%;
   height: 100px;
-  background-color: rgb(240, 238, 238);
+  background-color: rgb(92, 58, 58);
 }
 //menu
 .nav__header {
   position: fixed;
   height: 100px;
   width: 100%;
-  background: linear-gradient(to right, rgb(255, 255, 255), rgb(161, 39, 110));
+  background: linear-gradient(to right, rgb(209, 206, 206), rgb(161, 39, 110));
   display: flex;
   justify-content: space-between;
   align-items: center;
@@ -50,9 +52,6 @@ header {
 .header_avatar {
   width: 55px;
   margin-right: 20px;
-  @media screen and(max-width:768px) {
-    display: none;
-  }
   &:hover {
     cursor: pointer;
     border: 2px solid orange;
@@ -123,69 +122,13 @@ header {
   display: block;
 }
 
-//Fin nav
-nav {
-  padding: 0px 20px;
-  padding-top: 10px;
-  padding-block-end: 30px;
-  @include movil {
-    padding: 0px 5px;
-    padding-top: 10px;
-    padding-block-end: 20px;
-  }
-  //Inicio Carrusel
-  & .container-slider {
-    //border: 1px solid red;
-    width: 100%;
-    max-width: 100%;
-    margin: auto;
-    overflow: hidden;
-    box-shadow: 0 10px 20px;
-    position: relative;
-    border-radius: 15px;
-  }
-  & .slider {
-    display: flex;
-    width: 400%;
-    height: 60vh;
-    margin-left: -100%;
-  }
-  & .slider_section {
-    width: 100%;
-  }
-  & .slider_img {
-    display: block;
-    margin: auto;
-    width: 100%;
-    height: 100%;
-    object-fit: cover;
-  }
-  & .slider_btn {
-    position: absolute;
-    width: 40px;
-    height: 40px;
-    background: rgba(255, 255, 255, 0.7);
-    top: 50%;
-    transform: translateY(-50%);
-    font-size: 30px;
-    font-weight: bold;
-    font-family: monospace;
-    text-align: center;
-    border-radius: 50%;
-    cursor: pointer;
-  }
-  & .slider_btn:hover {
-    background: #fff;
-  }
-  & .slider_btn--left {
-    left: 10px;
-  }
-  & .slider_btn--righ {
-    right: 10px;
-  }
-  //Fin Carrusel
+.slider_img {
+  width: 100%;
+  height: 400px;
+  object-fit: cover;
+  margin: auto;
+  padding: auto;
 }
-//Fin nav
 
 //container productos-filter
 .producto_container {
@@ -275,7 +218,6 @@ nav {
     display: flex;
     position: relative;
     width: 100%;
-
     .productos {
       display: inline-flex;
       flex-flow: row wrap;
@@ -293,15 +235,6 @@ nav {
           outline: 0;
           text-decoration: none;
         }
-
-        // .imagen_producto {
-        //   border-top-left-radius: calc(0.25rem - 1px);
-        //   border-top-right-radius: calc(0.25rem - 1px);
-        //   width: 100%;
-        //   display: block;
-        //   object-fit: cover;
-        // }
-
         .tarjeta_body {
           padding: 0.8125rem 0.8125rem 1.0625rem;
 
@@ -407,5 +340,18 @@ nav {
   }
   .precio_producto {
     width: 100%;
+  }
+  
+}
+@media screen and(max-width:768px) {
+  .filtro_categoria {
+    display: none;
+  }
+
+  .header_avatar {
+    display: none;
+  }
+  .user {
+    display: none;
   }
 }

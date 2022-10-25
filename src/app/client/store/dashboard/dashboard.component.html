@@ -24,11 +24,7 @@
       </ul>
 
       <div class="user" *ngIf="user">
-        <img
-          class="header_avatar"
-          src="../../../../assets/img/image-avatar.png"
-          alt=""
-        />
+        <img class="header_avatar" src="../../../../assets/img/image-avatar.png" alt="" />
         {{ user.nombreApellido }}
         <br />
         <button class="btn_salir" (click)="logout()">Salir</button>
@@ -39,45 +35,26 @@
       <!--Menu-->
     </div>
     <!--Final Menu-Header-->
+
   </header>
   <!--Final Header-->
+
+
   <!-- Inicio img-Carrusel-->
-  <nav class="nav__slider">
-    <div class="container-slider">
-      <div class="slider" id="slider">
-        <div class="slider_section">
-          <img
-            src="../../../../assets/img/CarteraOferta1.jpg"
-            alt=""
-            class="slider_img"
-          />
-        </div>
-        <div class="slider_section">
-          <img
-            src="../../../../assets/img/CarteraOferta2.jpg"
-            alt=""
-            class="slider_img"
-          />
-        </div>
-        <div class="slider_section">
-          <img
-            src="../../../../assets/img/CarteraOferta3.jpg"
-            alt=""
-            class="slider_img"
-          />
-        </div>
-        <div class="slider_section">
-          <img
-            src="../../../../assets/img/logotienda.png"
-            alt=""
-            class="slider_img"
-          />
-        </div>
-      </div>
-      <div class="slider_btn slider_btn--righ" id="btn-rigth">&#62;</div>
-      <div class="slider_btn slider_btn--left" id="btn-left">&#60;</div>
-    </div>
-  </nav>
+  <carousel [interval]="2000" [isAnimated]="true">
+    <slide>
+      <img src="../../../../assets/img/CarteraOferta1.jpg" alt="" class="slider_img" />
+    </slide>
+    <slide>
+      <img src="../../../../assets/img/CarteraOferta2.jpg" alt="" class="slider_img" />
+    </slide>
+    <slide>
+      <img src="../../../../assets/img/CarteraOferta3.jpg" alt="" class="slider_img" />
+    </slide>
+    <slide>
+      <img src="../../../../assets/img/logotienda.png" alt="" class="slider_img" />
+    </slide>
+  </carousel>
   <!-- Fin img-Carrusel-->
 
   <!-- Inicio filtro Producto-->
@@ -105,31 +82,20 @@
         </ul>
       </div>
     </div>
-
     <!-- Inicio filtro Producto-->
     <div class="productos_catalogo mt-4">
       <div class="productos">
         <div class="producto_item" *ngFor="let p of productos">
-          <carousel [interval]="1000">
+          <carousel [interval]="2000" [isAnimated]="true">
             <slide *ngFor="let img of p.imgProducto">
-              <img
-                height="200px"
-                width="200px"
-                class="imagen_producto"
-                [src]="[img.imgUrl]"
-                alt="{{ img.nombreImg }}"
-                style="display: block; width: 100%"
-              />
+              <img height="200px" width="200px" class="imagen_producto" [src]="[img.imgUrl]" alt="{{ img.nombreImg }}"
+                style="display: block; width: 100%" />
             </slide>
           </carousel>
           <div class="tarjeta_body">
             <ul class="lista_color_container">
               <li *ngFor="let cl of p.colorProducto">
-                <span
-                  class="color_elemento active"
-                  style="background-color: #800000"
-                  >{{ cl.colorCode }}</span
-                >
+                <span class="color_elemento active" style="background-color: #800000">{{ cl.colorCode }}</span>
                 <span class="color_nombre">{{ cl.colorName }}</span>
               </li>
             </ul>
