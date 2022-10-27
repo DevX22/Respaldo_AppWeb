@@ -1,6 +1,8 @@
 import { Component, OnInit } from '@angular/core';
+import { Categoria } from 'src/app/dto/producto/categoria.dto';
 import { Producto } from 'src/app/dto/producto/producto.dto';
 import { User } from 'src/app/dto/user/user.dto';
+import { CategoriaService } from 'src/app/service/categoria.service';
 import { LoadJsService } from 'src/app/service/load-js.service';
 import { ProductoService } from 'src/app/service/producto.service';
 import { UserService } from 'src/app/service/user.service';
@@ -13,16 +15,37 @@ import { UserService } from 'src/app/service/user.service';
 export class DashboardComponent implements OnInit {
   user?: User;
   productos: Producto[] = [];
+  categorias: Categoria[] = [];
+
+  imagenes: any[] = [
+    {
+      imgUrl: 'assets/img/CarteraOferta1.jpg',
+      nombreImg: '',
+    },
+    {
+      imgUrl: 'assets/img/CarteraOferta2.jpg',
+      nombreImg: '',
+    },
+    {
+      imgUrl: 'assets/img/CarteraOferta3.jpg',
+      nombreImg: '',
+    },
+    {
+      imgUrl:
+        'https://renzocosta.vteximg.com.br/arquivos/catalogo-hombre-morrales.jpg',
+      nombreImg: '',
+    },
+  ];
 
   constructor(
     private productoService: ProductoService,
+    private categoriaService: CategoriaService,
     private _packJS: LoadJsService,
     private userService: UserService
-  ) {
-    _packJS.changeJS(['slider'], 'body');
-  }
+  ) {}
 
   ngOnInit(): void {
+    this.getCategoria();
     this.userService.getUser().subscribe({
       next: (data) => {
         this.user = data;
@@ -44,4 +67,14 @@ export class DashboardComponent implements OnInit {
       },
     });
   }
+
+  getCategoria() {
+    this.categoriaService.get().subscribe({
+      next: (data) => {
+        this.categorias = data;
+      },
+    });
+  }
+
+  filterCategoria() {}
 }

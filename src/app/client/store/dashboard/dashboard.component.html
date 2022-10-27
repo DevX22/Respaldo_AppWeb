@@ -1,4 +1,4 @@
-<div class="div_body" style="background-color: rgb(246, 233, 233)">
+<div class="div_body">
   <!--Inicio Header-->
   <header>
     <!--Inicio Menu-Header-->
@@ -41,37 +41,29 @@
 
 
   <!-- Inicio img-Carrusel-->
-  <carousel [interval]="2000" [isAnimated]="true">
-    <slide>
-      <img src="../../../../assets/img/CarteraOferta1.jpg" alt="" class="slider_img" />
-    </slide>
-    <slide>
-      <img src="../../../../assets/img/CarteraOferta2.jpg" alt="" class="slider_img" />
-    </slide>
-    <slide>
-      <img src="../../../../assets/img/CarteraOferta3.jpg" alt="" class="slider_img" />
-    </slide>
-    <slide>
-      <img src="../../../../assets/img/logotienda.png" alt="" class="slider_img" />
-    </slide>
-  </carousel>
+  <app-custom-carrusel *ngIf="imagenes.length > 0"
+    [imagenes]="imagenes" 
+    [clasecss]="'slider_img'" 
+    [isAnimated]="true" 
+    [timer]="2000">
+  </app-custom-carrusel>
   <!-- Fin img-Carrusel-->
 
   <!-- Inicio filtro Producto-->
   <div class="producto_container">
     <div class="filtro_categoria active">
-      <div class="filtro_container">
+      <div class="filtro_container" >
         <ul class="filtro_list">
           <li class="filtro_item">
-            <div class="titulo-item">
+            <div class="titulo-item" >
               <p>Categoria</p>
               <i class="icons">➕ </i>
             </div>
             <div class="contenido_filtro">
               <ul class="lista">
-                <li>
+                <li *ngFor="let c of categorias">
                   <label class="content_Check">
-                    Billeteras
+                    {{c.categoria}}
                     <input />
                     <span class="check_Mark"></span>
                   </label>
@@ -86,12 +78,7 @@
     <div class="productos_catalogo mt-4">
       <div class="productos">
         <div class="producto_item" *ngFor="let p of productos">
-          <carousel [interval]="2000" [isAnimated]="true">
-            <slide *ngFor="let img of p.imgProducto">
-              <img height="200px" width="200px" class="imagen_producto" [src]="[img.imgUrl]" alt="{{ img.nombreImg }}"
-                style="display: block; width: 100%" />
-            </slide>
-          </carousel>
+          <app-custom-carrusel [imagenes]="p.imgProducto" [clasecss]="'imagen_producto'" [timer]="2000" ></app-custom-carrusel>
           <div class="tarjeta_body">
             <ul class="lista_color_container">
               <li *ngFor="let cl of p.colorProducto">
