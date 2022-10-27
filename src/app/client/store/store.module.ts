@@ -1,9 +1,9 @@
 import { NgModule } from '@angular/core';
 import { CommonModule } from '@angular/common';
-import { CarouselModule } from 'ngx-bootstrap/carousel';
 
 import { StoreRoutingModule } from './store-routing.module';
 import { DashboardComponent } from './dashboard/dashboard.component';
+import { UtilitariosModule } from 'src/app/utilitarios/utilitarios.module';
 
 @NgModule({
   declarations: [
@@ -12,7 +12,7 @@ import { DashboardComponent } from './dashboard/dashboard.component';
   imports: [
     CommonModule,
     StoreRoutingModule,
-    CarouselModule.forRoot()
+    UtilitariosModule
   ]
 })
 export class StoreModule { }

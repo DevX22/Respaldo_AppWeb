@@ -15,7 +15,7 @@
 .div_body {
   font-family: "Montserrat", sans-serif;
   width: 100%;
-  height: 100%;
+  height: 100px;
 }
 
 header {
@@ -218,6 +218,7 @@ header {
     display: flex;
     position: relative;
     width: 100%;
+    height: 100vh;
     .productos {
       display: inline-flex;
       flex-flow: row wrap;
